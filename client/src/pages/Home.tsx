@@ -41,11 +41,11 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/register">
+              <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="h-14 px-8 rounded-full text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 w-full sm:w-auto">
                   Register Now
                 </Button>
-              </Link>
+              </a>
               <Link href="/about">
                 <Button size="lg" variant="outline" className="h-14 px-8 rounded-full text-lg border-white/20 hover:bg-white/5 text-white w-full sm:w-auto">
                   Learn More
@@ -109,12 +109,12 @@ export default function Home() {
                   <div>{nextEvent.location || "TBA"}</div>
                 </div>
               </div>
-              <Link href="/register">
+              <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
                 <Button className="h-12 px-8 rounded-full bg-white text-background hover:bg-white/90 font-bold group">
                   Secure Your Seat 
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
