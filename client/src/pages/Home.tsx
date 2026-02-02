@@ -4,6 +4,7 @@ import { ArrowRight, Calendar, Users, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEvents } from "@/hooks/use-events";
 import { format } from "date-fns";
+import { MatrixRain } from "@/components/effects/MatrixRain";
 
 export default function Home() {
   const { data: events } = useEvents();
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden imperial-gradient">
+        <MatrixRain color="#173E7D" opacity={0.2} fontSize={16} />
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-primary/20 blur-[100px]" />
