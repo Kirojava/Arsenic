@@ -8,10 +8,10 @@ interface MatrixRainProps {
 }
 
 export function MatrixRain({ 
-  color = "#173E7D", // Arsenic Imperial Blue
-  fontSize = 14,
-  opacity = 0.3,
-  speed = 2
+  color = "#3b82f6", // More vibrant blue (Tailwind blue-500)
+  fontSize = 20,
+  opacity = 0.8,
+  speed = 3
 }: MatrixRainProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
