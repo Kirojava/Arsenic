@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden imperial-gradient">
-        <MatrixRain color="#60a5fa" opacity={0.6} fontSize={22} speed={4} />
+        <MatrixRain color="#93c5fd" opacity={0.75} fontSize={24} speed={4} />
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-primary/20 blur-[100px]" />
