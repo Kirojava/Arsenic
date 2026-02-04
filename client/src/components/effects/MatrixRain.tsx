@@ -4,12 +4,14 @@ interface MatrixRainProps {
   color?: string;
   fontSize?: number;
   opacity?: number;
+  speed?: number;
 }
 
 export function MatrixRain({ 
   color = "#173E7D", // Arsenic Imperial Blue
   fontSize = 14,
-  opacity = 0.15 
+  opacity = 0.3,
+  speed = 2
 }: MatrixRainProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -26,22 +28,24 @@ export function MatrixRain({
     const columns = Math.floor(width / fontSize);
     const drops: number[] = new Array(columns).fill(1);
 
-    // Characters to use - including some "Arsenic" related ones if desired
-    const chars = "ARSENICSUMMIT0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // Focus characters on "ARSENIC" to make it more visible
+    const chars = "ARSENIC";
 
+    let frameCount = 0;
     const draw = () => {
       // Semi-transparent background to create trail effect
-      ctx.fillStyle = `rgba(0, 0, 0, 0.05)`;
+      ctx.fillStyle = `rgba(0, 0, 0, 0.1)`;
       ctx.fillRect(0, 0, width, height);
 
       ctx.fillStyle = color;
-      ctx.font = `${fontSize}px monospace`;
+      ctx.font = `bold ${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
+        // Randomly pick from ARSENIC characters
         const char = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+        if (drops[i] * fontSize > height && Math.random() > 0.98) {
           drops[i] = 0;
         }
 
@@ -51,7 +55,10 @@ export function MatrixRain({
 
     let animationId: number;
     const animate = () => {
-      draw();
+      frameCount++;
+      if (frameCount % speed === 0) {
+        draw();
+      }
       animationId = requestAnimationFrame(animate);
     };
 
