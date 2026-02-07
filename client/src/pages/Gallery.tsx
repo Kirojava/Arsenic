@@ -1,17 +1,14 @@
 import { useGallery } from "@/hooks/use-gallery";
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { GavelLoadingScreen } from "@/components/GavelLoading";
 
 export default function Gallery() {
   const { data: images, isLoading } = useGallery();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   if (isLoading) {
-    return (
-      <div className="pt-24 min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <GavelLoadingScreen />;
   }
 
   return (

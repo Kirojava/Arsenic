@@ -2,16 +2,13 @@ import { useTeam } from "@/hooks/use-team";
 import { motion } from "framer-motion";
 import { Linkedin, Instagram } from "lucide-react";
 import { type TeamMember } from "@shared/schema";
+import { GavelLoadingScreen } from "@/components/GavelLoading";
 
 export default function Team() {
   const { data: teamMembers, isLoading } = useTeam();
 
   if (isLoading) {
-    return (
-      <div className="pt-24 min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <GavelLoadingScreen />;
   }
 
   // Filter team members by roles

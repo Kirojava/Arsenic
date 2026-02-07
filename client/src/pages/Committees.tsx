@@ -4,16 +4,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Users, FileText, User } from "lucide-react";
+import { GavelLoadingScreen } from "@/components/GavelLoading";
 
 export default function Committees() {
   const { data: committees, isLoading } = useCommittees();
 
   if (isLoading) {
-    return (
-      <div className="pt-24 min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <GavelLoadingScreen />;
   }
 
   const container = {
