@@ -45,43 +45,42 @@ export default function Committees() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {committees?.map((committee) => (
             <motion.div key={committee.id} variants={item}>
-              <Card className="glass-card h-full flex flex-col hover:border-primary/50 transition-colors group overflow-hidden">
-                <div className="h-48 overflow-hidden relative">
+              <Card className="glass-card h-full flex flex-col hover:border-blue-500/30 transition-all duration-500 group overflow-hidden hover:scale-[1.02] hover:shadow-blue-500/5">
+                <div className="h-64 overflow-hidden relative">
                   {committee.imageUrl ? (
                     <img 
                       src={committee.imageUrl} 
                       alt={committee.name} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-black flex items-center justify-center">
-                      <Users className="w-16 h-16 text-primary/40" />
+                    <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-black flex items-center justify-center">
+                      <Users className="w-16 h-16 text-blue-500/20" />
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="text-xs font-bold bg-primary px-2 py-1 rounded text-white mb-1 inline-block">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <span className="text-[10px] font-bold tracking-[0.2em] bg-blue-600 px-3 py-1 rounded-full text-white uppercase backdrop-blur-md shadow-lg">
                       {committee.abbreviation}
                     </span>
                   </div>
                 </div>
 
-                <CardHeader>
-                  <CardTitle className="text-xl text-white font-heading">{committee.name}</CardTitle>
-                  <CardDescription className="line-clamp-2">{committee.description}</CardDescription>
+                <CardHeader className="px-8 pt-8">
+                  <CardTitle className="text-2xl text-white font-heading font-black tracking-tight">{committee.name}</CardTitle>
+                  <CardDescription className="line-clamp-2 text-white/50 text-sm font-light leading-relaxed">{committee.description}</CardDescription>
                 </CardHeader>
                 
-                <CardContent className="flex-grow">
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div className="flex items-start gap-2">
-                      <FileText className="w-4 h-4 mt-1 text-primary" />
-                      <span className="font-semibold text-white/80">Agenda:</span>
+                <CardContent className="px-8 pb-8 flex-grow">
+                  <div className="space-y-4 text-sm">
+                    <div className="flex items-start gap-3">
+                      <div className="w-1 h-1 rounded-full bg-blue-500 mt-2 shrink-0" />
+                      <p className="line-clamp-3 italic text-white/40 font-light leading-relaxed">{committee.agenda}</p>
                     </div>
-                    <p className="pl-6 line-clamp-3 italic text-white/60">{committee.agenda}</p>
                   </div>
                 </CardContent>
 

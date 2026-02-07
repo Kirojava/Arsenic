@@ -21,50 +21,62 @@ export default function Team() {
   const secretariat = teamMembers?.filter(m => m.role === 'Secretariat').sort((a, b) => (a.order || 0) - (b.order || 0));
 
   const MemberCard = ({ member }: { member: TeamMember }) => (
-    <div className="flex flex-col items-center text-center group">
-      <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/5 mb-6 shadow-2xl group-hover:border-primary transition-colors duration-300 relative">
+    <motion.div 
+      whileHover={{ y: -10 }}
+      className="flex flex-col items-center text-center group relative"
+    >
+      <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border border-white/5 mb-8 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] group-hover:border-blue-500/50 transition-all duration-500 relative bg-[#020617]">
         {member.imageUrl ? (
-          <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" />
+          <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black flex items-center justify-center text-3xl font-heading text-white/20">
-            {member.name.charAt(0)}
+          <div className="w-full h-full flex items-center justify-center text-4xl font-heading font-black text-white/5">
+            {member.name.split(' ').map(n => n[0]).join('')}
           </div>
         )}
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
-      <h3 className="text-xl font-heading font-bold text-white mb-1">{member.name}</h3>
-      <div className="text-primary font-medium text-sm uppercase tracking-wide mb-2">{member.title}</div>
-      {member.department && <div className="text-xs text-muted-foreground mb-3">{member.department}</div>}
       
-      <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 className="text-2xl font-heading font-black text-white mb-2 tracking-tight">{member.name}</h3>
+      <div className="text-blue-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-3">{member.title}</div>
+      {member.department && <div className="text-[10px] text-white/30 font-medium uppercase tracking-widest mb-6">{member.department}</div>}
+      
+      <div className="flex gap-6 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
         {member.socialLinks?.linkedin && (
-          <a href={member.socialLinks.linkedin} className="text-muted-foreground hover:text-blue-400 transition-colors">
-            <Linkedin className="w-4 h-4" />
+          <a href={member.socialLinks.linkedin} className="text-white/40 hover:text-white transition-colors">
+            <Linkedin className="w-5 h-5" />
           </a>
         )}
         {member.socialLinks?.instagram && (
-          <a href={member.socialLinks.instagram} className="text-muted-foreground hover:text-pink-500 transition-colors">
-            <Instagram className="w-4 h-4" />
+          <a href={member.socialLinks.instagram} className="text-white/40 hover:text-white transition-colors">
+            <Instagram className="w-5 h-5" />
           </a>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 
   return (
-    <div className="pt-24 min-h-screen bg-background pb-20">
+    <div className="pt-32 min-h-screen bg-[#020617] pb-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Our Secretariat</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            The dedicated team working behind the scenes to bring you an unparalleled MUN experience.
-          </p>
+        <div className="text-center mb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <div className="inline-block px-4 py-1 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+              The Visionaries
+            </div>
+            <h1 className="text-6xl md:text-8xl font-heading font-black text-white mb-6 tracking-tighter">Our Secretariat</h1>
+            <p className="text-white/40 max-w-xl mx-auto font-light leading-relaxed tracking-wide text-lg">
+              The minds engineering the next era of diplomatic excellence.
+            </p>
+          </motion.div>
         </div>
 
         {/* Founders */}
         {founders && founders.length > 0 && (
-          <section className="mb-24">
-            <h2 className="text-2xl font-heading font-bold text-center text-white/50 mb-12 uppercase tracking-widest border-b border-white/5 pb-4">Founders</h2>
-            <div className="flex flex-wrap justify-center gap-16 md:gap-24">
+          <section className="mb-40">
+            <div className="flex flex-wrap justify-center gap-24 md:gap-32">
               {founders.map(member => <MemberCard key={member.id} member={member} />)}
             </div>
           </section>
@@ -72,9 +84,9 @@ export default function Team() {
 
         {/* Executive Board */}
         {executives && executives.length > 0 && (
-          <section className="mb-24">
-            <h2 className="text-2xl font-heading font-bold text-center text-white/50 mb-12 uppercase tracking-widest border-b border-white/5 pb-4">Executive Board</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-y-20">
+          <section className="mb-40">
+            <h2 className="text-[10px] font-bold text-center text-white/20 mb-20 uppercase tracking-[0.5em]">Executive Leadership</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-24 md:gap-y-32">
               {executives.map(member => <MemberCard key={member.id} member={member} />)}
             </div>
           </section>
@@ -83,8 +95,8 @@ export default function Team() {
         {/* HODs & Secretariat */}
         {(hods?.length || 0) + (secretariat?.length || 0) > 0 && (
           <section>
-             <h2 className="text-2xl font-heading font-bold text-center text-white/50 mb-12 uppercase tracking-widest border-b border-white/5 pb-4">Heads of Departments</h2>
-             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
+             <h2 className="text-[10px] font-bold text-center text-white/20 mb-20 uppercase tracking-[0.5em]">Department Leadership</h2>
+             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 md:gap-y-24">
                {[...(hods || []), ...(secretariat || [])].map(member => <MemberCard key={member.id} member={member} />)}
              </div>
           </section>

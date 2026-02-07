@@ -61,23 +61,23 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/70;
   }
   
   .text-gradient-gold {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-yellow-200 via-yellow-500 to-yellow-800;
   }
 
   .glass-card {
-    @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-white/[0.02] backdrop-blur-2xl border border-white/[0.08] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)];
   }
 
   .glass-nav {
-    @apply bg-background/80 backdrop-blur-lg border-b border-white/5;
+    @apply bg-background/60 backdrop-blur-2xl border-b border-white/[0.05];
   }
   
   .imperial-gradient {
-    background: radial-gradient(circle at top center, hsl(217, 65%, 20%), hsl(220, 70%, 8%));
+    background: radial-gradient(circle at 50% -20%, hsl(217, 65%, 15%) 0%, hsl(220, 70%, 5%) 50%, hsl(220, 70%, 2%) 100%);
   }
 }
 
