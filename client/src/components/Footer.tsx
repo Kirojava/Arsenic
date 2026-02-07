@@ -12,7 +12,7 @@ export function Footer() {
             <div className="font-heading font-black text-3xl text-white tracking-tighter">
               ARSENIC<span className="text-blue-500">SUMMIT</span>
             </div>
-            <p className="text-white/50 text-sm font-light leading-relaxed tracking-wide">
+            <p className="text-white/70 text-sm font-light leading-relaxed tracking-wide">
               Empowering the next generation of leaders through diplomacy, debate, and dialogue. Join us for an unparalleled MUN experience.
             </p>
           </div>
@@ -21,10 +21,10 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-bold text-white text-[10px] uppercase tracking-[0.3em] mb-8">Navigation</h4>
             <ul className="space-y-4">
-              <li><Link href="/about" className="text-white/40 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />About Us</Link></li>
-              <li><Link href="/committees" className="text-white/40 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Committees</Link></li>
-              <li><Link href="/team" className="text-white/40 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Our Team</Link></li>
-              <li><Link href="/gallery" className="text-white/40 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Gallery</Link></li>
+              <li><Link href="/about" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />About Us</Link></li>
+              <li><Link href="/committees" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Committees</Link></li>
+              <li><Link href="/team" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Our Team</Link></li>
+              <li><Link href="/gallery" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Gallery</Link></li>
             </ul>
           </div>
 
@@ -32,15 +32,15 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-bold text-white text-[10px] uppercase tracking-[0.3em] mb-8">Contact Us</h4>
             <ul className="space-y-6">
-              <li className="flex items-start text-sm text-white/40 font-light leading-relaxed tracking-wide">
+              <li className="flex items-start text-sm text-white/60 font-light leading-relaxed tracking-wide">
                 <MapPin className="w-5 h-5 mr-4 text-blue-500 shrink-0" />
                 <span>123 University Avenue,<br />Model City, ST 12345</span>
               </li>
-              <li className="flex items-center text-sm text-white/40 font-light tracking-wide">
+              <li className="flex items-center text-sm text-white/60 font-light tracking-wide">
                 <Phone className="w-5 h-5 mr-4 text-blue-500 shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </li>
-              <li className="flex items-center text-sm text-white/40 font-light tracking-wide">
+              <li className="flex items-center text-sm text-white/60 font-light tracking-wide">
                 <Mail className="w-5 h-5 mr-4 text-blue-500 shrink-0" />
                 <span>secretariat@arsenicsummit.com</span>
               </li>
