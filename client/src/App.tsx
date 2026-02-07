@@ -10,6 +10,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Committees from "@/pages/Committees";
 import Team from "@/pages/Team";
+import Collaboration from "@/pages/Collaboration";
 import Register from "@/pages/Register";
 import Gallery from "@/pages/Gallery";
 import Admin from "@/pages/Admin";
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/committees" component={Committees} />
       <Route path="/team" component={Team} />
+      <Route path="/collaboration" component={Collaboration} />
       <Route path="/register" component={Register} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/admin" component={Admin} />

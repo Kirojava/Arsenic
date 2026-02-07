@@ -24,6 +24,7 @@ export function Footer() {
               <li><Link href="/about" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />About Us</Link></li>
               <li><Link href="/committees" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Committees</Link></li>
               <li><Link href="/team" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Our Team</Link></li>
+              <li><Link href="/collaboration" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Collaboration</Link></li>
               <li><Link href="/gallery" className="text-white/60 hover:text-white transition-all duration-300 text-sm font-light tracking-wide flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all" />Gallery</Link></li>
             </ul>
           </div>
